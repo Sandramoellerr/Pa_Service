@@ -1,0 +1,1282 @@
+/* =========================================
+   PA Service - Stylesheet
+   Én fil til alle fire sider.
+
+   Indhold:
+   1.  Farver og fonte
+   2.  Grundlæggende
+   3.  Sektioner og overskrifter
+   4.  Knapper og links
+   5.  Header og menu
+   6.  Hero (toppen af siderne)
+   7.  Fordele under toppen
+   8.  Fototavler (ydelser)
+   9.  Kort (priser, opgaver, værdier)
+   10. Prisliste
+   11. Før og efter-slider
+   12. Billede + tekst side om side
+   13. Lister
+   14. Spørgsmål og svar
+   15. Opfordring (CTA)
+   16. Kontakt og formular
+   17. Footer
+   18. Tablet og mobil
+
+   Gestaltlovene på siden:
+   - Nærhed: overskrift og tekst står tæt, sektioner har stor afstand.
+   - Alle h2-overskrifter er røde - på mørk baggrund er de hvide.
+   - Lighed: rød knap = kontakt / tilbud. Hvid knap = se mere / ring.
+     Alle kort og fototavler er bygget ens.
+   - Fælles område: ting der hører sammen, står i samme kort eller felt.
+   - Kontinuitet: prikket linje i prislisten fører øjet fra navn til pris.
+   - Figur/grund: tekst står altid på en rolig flade. I toppen ligger
+     et mørkt lag mellem foto og tekst.
+   ========================================= */
+
+
+/* ----- 1. Farver og fonte -----
+   Skift en farve her, så skifter den på hele siden */
+:root {
+  --navy: #10213f;       /* mørkeblå - samme som logoet */
+  --navy-dark: #0a1629;  /* endnu mørkere */
+  --red: #d7262e;        /* rød - knapper og detaljer */
+  --red-dark: #a8171e;   /* rød når musen er over */
+  --lightblue: #8ecae6;  /* lyseblå - flueben, pile og pilen i logoet (var før orange) */
+  --light: #eef2f7;      /* lys grå baggrund */
+  --white: #ffffff;
+  --text: #10213f;
+  --grey-text: #55617a;
+  --soft-text: #c3cbdb;  /* lys tekst på mørkeblå */
+  --line: rgba(16, 33, 63, 0.15);
+  --line-light: rgba(255, 255, 255, 0.2);
+
+  --font-heading: "Roboto Slab", Georgia, serif;
+  --font-text: "Inter", Arial, sans-serif;
+}
+
+
+/* ----- 2. Grundlæggende ----- */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-text);
+  font-size: 17px;
+  line-height: 1.6;
+  color: var(--text);
+  background-color: var(--white);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+}
+
+h1,
+h2,
+h3 {
+  margin: 0 0 16px 0;
+  font-family: var(--font-heading);
+  font-weight: 700;
+  line-height: 1.15;
+}
+
+h1 {
+  font-size: 60px;
+}
+
+/* Alle h2-overskrifter er røde */
+h2 {
+  font-size: 40px;
+  color: var(--red);
+}
+
+h3 {
+  font-size: 21px;
+}
+
+p {
+  margin: 0 0 16px 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.big-text {
+  font-size: 19px;
+}
+
+.grey-text {
+  color: var(--grey-text);
+}
+
+
+/* ----- 3. Sektioner og overskrifter ----- */
+.section {
+  padding: 100px 0;
+}
+
+.section-light {
+  background-color: var(--light);
+}
+
+.section-navy {
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+.section-navy .grey-text {
+  color: var(--soft-text);
+}
+
+/* På mørk baggrund er overskrifterne hvide i stedet for røde,
+   så de er nemme at læse */
+.section-navy h2 {
+  color: var(--white);
+}
+
+/* Overskrift i midten af sektionen - som på kemPro */
+.section-title {
+  max-width: 720px;
+  margin: 0 auto 56px auto;
+  text-align: center;
+}
+
+.section-title h2 {
+  text-transform: uppercase;
+}
+
+.section-title p {
+  margin-top: 20px;
+}
+
+
+/* ----- 4. Knapper og links ----- */
+.button {
+  display: inline-block;
+  padding: 15px 28px;
+  border: 2px solid transparent;
+  font-family: var(--font-text);
+  font-size: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+/* Rød knap = kontakt, tilbud, send */
+.button-red {
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.button-red:hover {
+  background-color: var(--red-dark);
+}
+
+/* Hvid knap = se priser, ring, læs mere */
+.button-secondary {
+  background-color: var(--white);
+  color: var(--navy);
+  border-color: var(--navy);
+}
+
+.button-secondary:hover {
+  background-color: var(--light);
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-top: 28px;
+}
+
+.center {
+  justify-content: center;
+}
+
+/* Rødt link med pil */
+.arrow-link {
+  font-weight: 700;
+  color: var(--red);
+  text-decoration: none;
+}
+
+.arrow-link::after {
+  content: " →";
+}
+
+.arrow-link:hover {
+  text-decoration: underline;
+}
+
+
+/* ----- 5. Header og menu -----
+   Mørk bjælke med hvidt logo - som den sorte header på kemPro */
+header {
+  position: relative;
+  z-index: 10;
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+header .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 14px 0;
+}
+
+.logo img {
+  height: 64px;
+}
+
+nav ul {
+  display: flex;
+  gap: 36px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+nav a {
+  display: block;
+  padding: 6px 0;
+  font-weight: 600;
+  text-decoration: none;
+  border-bottom: 3px solid transparent;
+}
+
+nav a:hover,
+nav a.active {
+  border-bottom-color: var(--red);
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.header-phone {
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* Burgermenuen vises kun på tablet og mobil */
+.menu-button {
+  display: none;
+  padding: 8px 14px;
+  border: 2px solid var(--white);
+  background: none;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--white);
+  cursor: pointer;
+}
+
+
+/* ----- 6. Hero (toppen af siderne) -----
+   Stort foto over hele bredden med teksten ovenpå.
+   Et mørkeblåt lag mellem foto og tekst gør teksten nem at læse. */
+.hero {
+  position: relative;
+  overflow: hidden;
+  background-color: var(--navy);
+  color: var(--white);
+}
+
+/* Fotoet ligger bagerst i højre side af toppen.
+   Så står personen på billedet ved siden af teksten - ikke bag den. */
+.hero-photo {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 62%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+/* Det mørke lag: helt mørkeblåt under teksten, og så glider det
+   blødt over i fotoet */
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, var(--navy) 0%, var(--navy) 38%, rgba(16, 33, 63, 0.4) 58%, rgba(16, 33, 63, 0.15) 100%);
+  z-index: 1;
+}
+
+.hero-grid {
+  display: flex;
+  align-items: center;
+  min-height: 640px;
+}
+
+/* Teksten ligger forrest og starter samme sted som .container */
+.hero-text {
+  position: relative;
+  z-index: 2;
+  max-width: 760px;
+  padding: 100px 40px 100px max(5vw, calc((100vw - 1200px) / 2));
+}
+
+.hero .big-text {
+  max-width: 540px;
+  color: #dfe5ef;
+}
+
+.hero-phone {
+  margin-top: 20px;
+  color: #dfe5ef;
+}
+
+.hero-phone a {
+  font-weight: 700;
+  color: var(--white);
+}
+
+/* Forsidens foto er taget på højkant. "center 35%" viser den del af
+   billedet, hvor hovedet er - prøv et andet tal, hvis det skal flyttes
+   (0% = øverst i billedet, 100% = nederst) */
+.photo-head {
+  object-position: center 35%;
+}
+
+/* Lavere top på undersiderne */
+.hero-small .hero-grid {
+  min-height: 420px;
+}
+
+.hero-small h1 {
+  font-size: 50px;
+}
+
+.breadcrumb {
+  font-size: 14px;
+  color: var(--soft-text);
+}
+
+/* Knapper der hopper ned på siden */
+.jump-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 28px;
+}
+
+.jump-links a {
+  padding: 10px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.jump-links a:hover {
+  border-color: var(--red);
+  background-color: var(--red);
+}
+
+
+/* ----- 7. Fordele under toppen ----- */
+.usp {
+  background-color: var(--white);
+  border-bottom: 1px solid var(--line);
+}
+
+.usp ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.usp li {
+  padding: 26px 24px;
+  font-weight: 600;
+  text-align: center;
+  border-left: 1px solid var(--line);
+}
+
+.usp li:first-child {
+  border-left: none;
+}
+
+/* Lyseblå flueben foran - samme farve som pilen i logoet */
+.usp li::before {
+  content: "✓";
+  margin-right: 10px;
+  font-weight: 700;
+  color: var(--lightblue);
+}
+
+
+/* ----- 8. Fototavler (ydelser) -----
+   Foto med en mørk bjælke og en rund rød pil - som kemPros kategorier */
+.tiles {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 28px;
+}
+
+.tile {
+  position: relative;
+  display: block;
+  height: 500px;
+  overflow: hidden;
+  color: var(--white);
+  text-decoration: none;
+}
+
+.tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s;
+}
+
+.tile:hover img {
+  transform: scale(1.04);
+}
+
+.tile-label {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 24px 28px;
+  background-color: var(--navy);
+}
+
+.tile-label h3 {
+  margin-bottom: 4px;
+  font-size: 26px;
+  text-transform: uppercase;
+}
+
+.tile-label p {
+  margin: 0;
+  font-size: 15px;
+  color: var(--soft-text);
+}
+
+.round-arrow {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background-color: var(--lightblue);  /* lyseblå som pilen i logoet */
+  color: var(--navy);  /* mørk pil, så den kan ses på den lyse cirkel */
+  font-size: 22px;
+}
+
+
+/* ----- 9. Kort (priser, opgaver, værdier) -----
+   Hvide kort på lys grå baggrund - som kemPros produktkort */
+.cards {
+  display: grid;
+  gap: 24px;
+}
+
+.cards-2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.cards-3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.cards-4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--white);
+  border: 1px solid var(--line);
+}
+
+.card-body {
+  flex-grow: 1;  /* gør at bjælkerne i bunden står på linje */
+  padding: 32px 28px;
+}
+
+.card-body p {
+  margin: 0;
+  color: var(--grey-text);
+}
+
+/* Mørk bjælke i bunden af kortet med link */
+.card-bar {
+  display: flex;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background-color: var(--navy);
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.card-bar:hover {
+  background-color: var(--red);
+}
+
+/* Pilen i bjælken er lyseblå som pilen i logoet */
+.card-bar span {
+  color: var(--lightblue);
+}
+
+/* Når bjælken bliver rød, bliver pilen hvid, så den stadig kan ses */
+.card-bar:hover span {
+  color: var(--white);
+}
+
+/* Prisen i priskortene
+   (.card-body .price er nødvendig, ellers vinder ".card-body p" og fjerner afstanden) */
+.card-body .price {
+  margin: 12px 0 10px 0;
+  white-space: nowrap;  /* "/ time" må ikke hoppe ned på en ny linje */
+  font-family: var(--font-heading);
+  font-size: 34px;
+  font-weight: 700;
+  line-height: 1.1;
+  color: var(--navy);
+}
+
+.price span {
+  font-family: var(--font-text);
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--grey-text);
+}
+
+
+/* ----- 10. Prisliste (som en arbejdsseddel) ----- */
+.price-columns {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+
+.price-list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.price-list li {
+  display: flex;
+  align-items: baseline;
+  gap: 14px;
+  padding: 20px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.price-name {
+  font-weight: 600;
+}
+
+.price-name small {
+  display: block;
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--grey-text);
+}
+
+/* Prikket linje mellem navn og pris */
+.price-dots {
+  flex-grow: 1;
+  border-bottom: 2px dotted currentColor;
+  opacity: 0.35;
+}
+
+.price-amount {
+  font-family: var(--font-heading);
+  font-size: 28px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.price-amount span {
+  font-family: var(--font-text);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.price-note {
+  margin-top: 20px;
+  font-size: 15px;
+  color: var(--grey-text);
+}
+
+
+/* ----- 11. Før og efter-slider -----
+   Efter-billedet ligger nederst. Før-billedet ligger ovenpå og bliver
+   "klippet" af JavaScript, når man trækker i slideren. */
+.compare {
+  position: relative;
+  height: 600px;
+  overflow: hidden;
+  border: 8px solid var(--white);
+  background-color: var(--navy);
+}
+
+.compare img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.compare-before {
+  clip-path: inset(0 50% 0 0);
+}
+
+/* Den lodrette streg */
+.compare-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: 4px;
+  margin-left: -2px;
+  background-color: var(--white);
+  pointer-events: none;
+}
+
+/* Det runde håndtag på stregen */
+.compare-line::after {
+  content: "◀ ▶";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: var(--red);
+  color: var(--white);
+  font-size: 12px;
+}
+
+/* Slideren ligger usynlig over hele billedet */
+.compare-range {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  opacity: 0;
+  cursor: ew-resize;
+}
+
+.compare-tag {
+  position: absolute;
+  top: 20px;
+  padding: 6px 14px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--white);
+  pointer-events: none;
+}
+
+.compare-tag-before {
+  left: 20px;
+  background-color: var(--navy);
+}
+
+.compare-tag-after {
+  right: 20px;
+  background-color: var(--red);
+}
+
+.compare-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.compare-grid .compare {
+  height: 540px;
+}
+
+.compare-caption {
+  margin-top: 14px;
+  font-weight: 600;
+}
+
+
+/* ----- 12. Billede + tekst side om side ----- */
+.split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+}
+
+.split-photo {
+  width: 100%;
+  height: 540px;
+  object-fit: cover;
+}
+
+/* Billeder af personer: vis toppen, så hovederne kommer med */
+.show-top {
+  object-position: center top;
+}
+
+/* Byt om, så billedet står til højre */
+.split-reverse .split-photo {
+  order: 2;
+}
+
+
+/* ----- 13. Lister ----- */
+/* Liste med lyseblå flueben */
+.check-list {
+  margin: 24px 0;
+  padding: 0;
+  list-style: none;
+}
+
+.check-list li {
+  padding: 8px 0;
+  font-weight: 600;
+}
+
+.check-list li::before {
+  content: "✓";
+  margin-right: 12px;
+  color: var(--lightblue);
+}
+
+/* Punktliste (om os): lyseblå flueben, fed overskrift og tekst under */
+.point-list {
+  margin: 32px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.point-list li {
+  position: relative;
+  padding: 20px 0 20px 44px;
+  border-top: 1px solid var(--line-light);
+}
+
+.point-list li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  top: 18px;
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--lightblue);
+}
+
+.point-list h3 {
+  margin-bottom: 4px;
+}
+
+.point-list p {
+  margin: 0;
+  color: var(--soft-text);
+}
+
+/* Liste i to kolonner med små røde firkanter */
+.two-col-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px 24px;
+  margin: 12px 0 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.two-col-list li::before {
+  content: "■";
+  margin-right: 10px;
+  font-size: 11px;
+  vertical-align: middle;
+  color: var(--red);
+}
+
+.list-title {
+  margin-top: 32px;
+  margin-bottom: 4px;
+}
+
+
+/* ----- 14. Spørgsmål og svar -----
+   <details> åbner og lukker af sig selv - uden JavaScript */
+.faq {
+  max-width: 820px;
+  margin: 0 auto;
+}
+
+.faq details {
+  border-bottom: 1px solid var(--line);
+}
+
+.faq summary {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 22px 0;
+  font-family: var(--font-heading);
+  font-size: 20px;
+  font-weight: 700;
+  cursor: pointer;
+  list-style: none;
+}
+
+/* Skjul Safaris standard-pil */
+.faq summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq summary::after {
+  content: "+";
+  font-size: 26px;
+  line-height: 1;
+  color: var(--red);
+}
+
+.faq details[open] summary::after {
+  content: "–";
+}
+
+.faq details p {
+  padding-bottom: 22px;
+  color: var(--grey-text);
+}
+
+
+/* ----- 15. Opfordring (CTA) ----- */
+.cta {
+  padding: 72px 0;
+  background-color: var(--red);
+  color: var(--white);
+}
+
+.cta .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+.cta h2 {
+  margin-bottom: 8px;
+  color: var(--white);  /* hvid, ellers forsvinder den på den røde baggrund */
+}
+
+.cta p {
+  margin: 0;
+}
+
+.cta-phone {
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: 42px;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.cta-phone small {
+  display: block;
+  font-family: var(--font-text);
+  font-size: 14px;
+  font-weight: 400;
+}
+
+
+/* ----- 16. Kontakt og formular ----- */
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 72px;
+}
+
+.contact-lines {
+  margin-top: 32px;
+}
+
+.contact-lines a,
+.contact-lines span {
+  display: block;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-light);
+  font-size: 19px;
+  text-decoration: none;
+}
+
+.contact-lines small {
+  display: block;
+  font-size: 13px;
+  color: var(--soft-text);
+}
+
+form {
+  padding: 40px;
+  background-color: var(--white);
+  color: var(--text);
+  border-top: 6px solid var(--red);
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-size: 15px;
+  font-weight: 700;
+}
+
+input,
+select,
+textarea {
+  width: 100%;
+  margin-bottom: 20px;
+  padding: 13px 14px;
+  border: 1px solid var(--line);
+  border-radius: 0;
+  background-color: var(--light);
+  font-family: var(--font-text);
+  font-size: 16px;
+  color: var(--text);
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: 2px solid var(--navy);
+  outline-offset: 0;
+}
+
+textarea {
+  height: 130px;
+  resize: vertical;
+}
+
+.form-note {
+  margin: 16px 0 0 0;
+  font-size: 14px;
+  color: var(--grey-text);
+}
+
+/* Beskeden vises med JavaScript, når formularen sendes */
+.form-message {
+  display: none;
+  margin: 16px 0 0 0;
+  font-weight: 600;
+}
+
+
+/* ----- 17. Footer ----- */
+footer {
+  padding: 64px 0 28px 0;
+  background-color: var(--light);
+  border-top: 6px solid var(--red);
+  color: var(--grey-text);
+  font-size: 15px;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 44px;
+  border-bottom: 1px solid var(--line);
+}
+
+.footer-logo img {
+  height: 84px;
+  margin-bottom: 16px;
+}
+
+footer h3 {
+  font-size: 17px;
+  color: var(--navy);
+}
+
+footer ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+footer li {
+  margin-bottom: 8px;
+}
+
+footer a {
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: var(--red);
+}
+
+.footer-bottom {
+  display: flex;
+  justify-content: space-between;
+  padding-top: 22px;
+  font-size: 13px;
+}
+
+
+/* =========================================
+   18a. TABLET (under 900px)
+   ========================================= */
+@media (max-width: 900px) {
+  h1,
+  .hero-small h1 {
+    font-size: 42px;
+  }
+
+  h2 {
+    font-size: 32px;
+  }
+
+  .section {
+    padding: 72px 0;
+  }
+
+  /* Alt der stod ved siden af hinanden, står nu under hinanden */
+  .split,
+  .tiles,
+  .price-columns,
+  .compare-grid,
+  .contact-grid,
+  .cards-2,
+  .cards-3 {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .cards-3 {
+    gap: 24px;
+  }
+
+  .cards-4 {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .split-reverse .split-photo {
+    order: 0;
+  }
+
+  .split-photo {
+    height: 420px;
+  }
+
+  .hero-grid,
+  .hero-small .hero-grid {
+    min-height: 480px;
+  }
+
+  /* Teksten fylder hele bredden, så fotoet fylder hele toppen
+     og bliver lige mørkt overalt */
+  .hero-photo {
+    width: 100%;
+  }
+
+  .hero::before {
+    background: rgba(16, 33, 63, 0.8);
+  }
+
+  .hero-text {
+    padding: 72px 5%;
+  }
+
+  .usp ul {
+    grid-template-columns: 1fr;
+  }
+
+  .usp li {
+    padding: 14px 0;
+    text-align: left;
+    border-left: none;
+    border-top: 1px solid var(--line);
+  }
+
+  .usp li:first-child {
+    border-top: none;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .cta .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  /* Telefonnummeret i headeren skjules - det står i hero og CTA */
+  .header-phone {
+    display: none;
+  }
+
+  /* Menuen gemmes bag burgerknappen */
+  .menu-button {
+    display: block;
+  }
+
+  header nav {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: var(--navy);
+    border-top: 1px solid var(--line-light);
+    border-bottom: 4px solid var(--red);
+  }
+
+  header nav.open {
+    display: block;
+  }
+
+  header nav ul {
+    flex-direction: column;
+    gap: 0;
+    width: 90%;
+    margin: 0 auto;
+    padding: 8px 0;
+  }
+
+  header nav a {
+    padding: 14px 0;
+  }
+}
+
+
+/* =========================================
+   18b. MOBIL (under 600px)
+   ========================================= */
+@media (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  h1,
+  .hero-small h1 {
+    font-size: 34px;
+  }
+
+  h2 {
+    font-size: 27px;
+  }
+
+  .section {
+    padding: 60px 0;
+  }
+
+  .section-title {
+    margin-bottom: 40px;
+  }
+
+  .logo img {
+    height: 46px;
+  }
+
+  .header-right {
+    gap: 10px;
+  }
+
+  .header-right .button {
+    padding: 10px 14px;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  .hero-text {
+    padding: 56px 5%;
+  }
+
+  .tile {
+    height: 380px;
+  }
+
+  .tile-label {
+    padding: 18px 20px;
+  }
+
+  .tile-label h3 {
+    font-size: 21px;
+  }
+
+  .split-photo {
+    height: 300px;
+  }
+
+  .compare,
+  .compare-grid .compare {
+    height: 380px;
+  }
+
+  .cards-4,
+  .form-row,
+  .footer-grid,
+  .two-col-list {
+    grid-template-columns: 1fr;
+  }
+
+  .price-amount {
+    font-size: 22px;
+  }
+
+  .cta-phone {
+    font-size: 34px;
+  }
+
+  form {
+    padding: 28px 20px;
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    gap: 6px;
+  }
+}

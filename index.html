@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PA Service – Flytning og handyman i hele Danmark</title>
+  <meta name="description"
+    content="PA Service udfører flytning og handyman-opgaver for private og virksomheder i hele Danmark. 12 års erfaring. Ring 27 29 97 07.">
+  <link rel="icon" href="images/favicon.svg">
+
+  <!-- Fonte fra Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/pa-service-logo-hvid.svg" alt="PA Service – forside">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="ydelser.html">Vores ydelser</a></li>
+          <li><a href="priser.html">Priser</a></li>
+          <li><a href="om-os.html">Om os</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <a class="header-phone" href="tel:+4527299707">☎ 27 29 97 07</a>
+        <a class="button button-red" href="index.html#kontakt">Kontakt os</a>
+        <button class="menu-button" type="button" aria-label="Åbn menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <!-- Fotoet ligger bagerst, teksten ovenpå (se "Hero" i style.css) -->
+    <section class="hero">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <h1>Flytning og handyman</h1>
+          <p class="big-text">Vi hjælper private og virksomheder med flytning, montering og de mange små opgaver i
+            hjemmet og på arbejdspladsen. Vi har 12 års erfaring i branchen.</p>
+
+          <div class="buttons">
+            <a class="button button-red" href="#kontakt">Få et tilbud</a>
+          </div>
+          <p class="hero-phone">Eller ring på <a href="tel:+4527299707">27 29 97 07</a></p>
+        </div>
+
+        <img class="hero-photo photo-head" src="images/kontorflytning.webp"
+          alt="Hæve-sænkebord bliver flyttet på rullebræt">
+      </div>
+    </section>
+
+    <!-- ===== FORDELE ===== -->
+    <div class="usp">
+      <div class="container">
+        <ul>
+          <li>Flytning i hele Danmark</li>
+          <li>Vi kan komme 48 timer efter bestilling</li>
+          <li>Alt indbo er forsikret</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- ===== YDELSER ===== -->
+    <section class="section">
+      <div class="container">
+        <div class="section-title">
+          <h2>Vores ydelser</h2>
+        </div>
+
+        <div class="tiles">
+          <a class="tile" href="ydelser.html#flytning">
+            <img src="images/flytning-stol.webp" alt="Flyttemand bærer en stol">
+            <div class="tile-label">
+              <div>
+                <h3>Flytning</h3>
+                <p>For private, firmaer, skoler, kommuner og hospitaler</p>
+              </div>
+              <span class="round-arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+
+          <a class="tile" href="ydelser.html#handyman">
+            <img src="images/koekkenskabe.webp" alt="Køkkenskabe monteret af PA Service">
+            <div class="tile-label">
+              <div>
+                <h3>Handyman</h3>
+                <p>Montering, hvidevarer, VVS, maling og tømrerarbejde</p>
+              </div>
+              <span class="round-arrow" aria-hidden="true">→</span>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FØR OG EFTER ===== -->
+    <section class="section section-navy">
+      <div class="container">
+        <div class="section-title">
+          <h2>Før og efter</h2>
+          <p class="big-text grey-text">Et badeværelse, vi har bygget op fra bunden. Træk i knappen for at se før og
+            efter.</p>
+        </div>
+
+        <!-- Slideren styres af js/script.js -->
+        <div class="compare">
+          <img src="images/bad-efter.webp" alt="Badeværelset efter: fliser, bruser og toilet">
+          <img class="compare-before" src="images/bad-foer.webp" alt="Badeværelset før: rå mure">
+          <div class="compare-line"></div>
+          <span class="compare-tag compare-tag-before">Før</span>
+          <span class="compare-tag compare-tag-after">Efter</span>
+          <input class="compare-range" type="range" min="0" max="100" value="50"
+            aria-label="Træk for at sammenligne før og efter">
+        </div>
+
+        <div class="buttons center">
+          <a class="button button-secondary" href="ydelser.html#foer-efter">Se flere før og efter</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== PRISER ===== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Priser</h2>
+          <p class="big-text grey-text">Vi arbejder efter timepris. Ønsker du en fast pris på en flytning, kommer vi
+            gerne ud og besigtiger opgaven.</p>
+        </div>
+
+        <div class="cards cards-3">
+          <div class="card">
+            <div class="card-body">
+              <h3>Handyman</h3>
+              <p class="price">400 kr. <span>/ time</span></p>
+              <p>1 handyman. Hertil kommer et startgebyr.</p>
+            </div>
+            <a class="card-bar" href="priser.html">Se alle priser <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h3>Handyman + varebil</h3>
+              <p class="price">550 kr. <span>/ time</span></p>
+              <p>Når opgaven kræver, at der skal køres noget.</p>
+            </div>
+            <a class="card-bar" href="priser.html">Se alle priser <span aria-hidden="true">→</span></a>
+          </div>
+
+          <div class="card">
+            <div class="card-body">
+              <h3>Flytning</h3>
+              <p class="price">Fra 850 kr. <span>/ time</span></p>
+              <p>Fast pris efter besigtigelse.</p>
+            </div>
+            <a class="card-bar" href="priser.html">Se alle priser <span aria-hidden="true">→</span></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== OM PA SERVICE ===== -->
+    <section class="section">
+      <div class="container split">
+        <img class="split-photo show-top" src="images/holdet.webp" alt="Holdet bag PA Service">
+
+        <div>
+          <h2>Om PA Service</h2>
+          <p class="big-text grey-text">PA Service blev startet for 2 år siden, men vi har arbejdet med flytning og
+            handyman-opgaver i 12 år.</p>
+          <p class="grey-text">Vi kører for private, firmaer, skoler, kommuner og hospitaler – i hele Danmark.</p>
+          <a class="arrow-link" href="om-os.html">Læs mere om os</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== KONTAKT ===== -->
+    <section class="section section-navy" id="kontakt">
+      <div class="container contact-grid">
+        <div>
+          <h2>Kontakt os</h2>
+          <p class="big-text grey-text">Skriv kort, hvad opgaven går ud på, så vender vi tilbage med en pris.</p>
+
+          <div class="contact-lines">
+            <a href="tel:+4527299707"><small>Telefon</small>27 29 97 07</a>
+            <a href="mailto:paservice@outlook.dk"><small>Mail</small>paservice@outlook.dk</a>
+            <span><small>Adresse</small>Baneleddet 37, 2600 Glostrup</span>
+          </div>
+        </div>
+
+        <!-- Formularen åbner en færdig mail i brugerens mailprogram (se js/script.js) -->
+        <form id="contact-form">
+          <div class="form-row">
+            <div>
+              <label for="navn">Navn</label>
+              <input type="text" id="navn" name="navn" autocomplete="name" required>
+            </div>
+            <div>
+              <label for="telefon">Telefon</label>
+              <input type="tel" id="telefon" name="telefon" autocomplete="tel" required>
+            </div>
+          </div>
+
+          <label for="type">Hvad drejer det sig om?</label>
+          <select id="type" name="type">
+            <option>Flytning</option>
+            <option>Handyman-opgave</option>
+            <option>Andet</option>
+          </select>
+
+          <label for="besked">Beskriv opgaven</label>
+          <textarea id="besked" name="besked" required></textarea>
+
+          <button class="button button-red" type="submit">Send forespørgsel</button>
+          <p class="form-note">Når du trykker send, åbner din mail med beskeden klar.</p>
+          <p class="form-message">Tak! Din mail er klar – husk at trykke send i dit mailprogram.</p>
+        </form>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-logo" href="index.html">
+            <img src="images/pa-service-logo.svg" alt="PA Service – forside">
+          </a>
+          <p>Flytning og handyman for private, virksomheder og institutioner i hele Danmark.</p>
+        </div>
+        <div>
+          <h3>Sider</h3>
+          <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="ydelser.html">Ydelser</a></li>
+            <li><a href="priser.html">Priser</a></li>
+            <li><a href="om-os.html">Om os</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="tel:+4527299707">27 29 97 07</a></li>
+            <li><a href="mailto:paservice@outlook.dk">paservice@outlook.dk</a></li>
+            <li>Baneleddet 37, 2600 Glostrup</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <a href="https://datacvr.virk.dk/enhed/virksomhed/44521660?fritekst=44521660&sideIndex=0&size=10"> <span>PA
+            Service · CVR 44521660</span>
+          <span>© 2026 PA Service</span></a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

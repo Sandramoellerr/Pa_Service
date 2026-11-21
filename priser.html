@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="da">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Priser – PA Service</title>
+  <meta name="description"
+    content="Priser på flytning og handyman. Handyman 400 kr. i timen, flytning fra 850 kr. i timen. Fast pris efter besigtigelse.">
+  <link rel="icon" href="images/favicon.svg">
+
+  <!-- Fonte fra Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&family=Inter:wght@400;600;700&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- ===== HEADER ===== -->
+  <header>
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/pa-service-logo-hvid.svg" alt="PA Service – forside">
+      </a>
+
+      <nav>
+        <ul>
+          <li><a href="ydelser.html">Vores ydelser</a></li>
+          <li><a class="active" href="priser.html">Priser</a></li>
+          <li><a href="om-os.html">Om os</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-right">
+        <a class="header-phone" href="tel:+4527299707">☎ 27 29 97 07</a>
+        <a class="button button-red" href="index.html#kontakt">Kontakt os</a>
+        <button class="menu-button" type="button" aria-label="Åbn menu" aria-expanded="false">☰</button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero hero-small">
+      <div class="hero-grid">
+        <div class="hero-text">
+          <p class="breadcrumb"><a href="index.html">Forside</a> / Priser</p>
+          <h1>Vores priser</h1>
+          <p class="big-text">Vi arbejder efter timepris. Ønsker du en fast pris på en flytning, kommer vi ud og
+            besigtiger opgaven.</p>
+        </div>
+
+        <img class="hero-photo" src="images/koekken.webp" alt="Færdigt køkken med vaskemaskine">
+      </div>
+    </section>
+
+    <!-- ===== PRISLISTE ===== -->
+    <!-- Hver pris er en <li> med navn, prikket linje og pris -->
+    <!-- HUSK: skriv om priserne er inkl. eller ekskl. moms, når kunden har svaret -->
+    <section class="section">
+      <div class="container price-columns">
+
+        <div>
+          <h2>Flytning</h2>
+          <ul class="price-list">
+            <li>
+              <span class="price-name">Flytning</span>
+              <span class="price-dots"></span>
+              <span class="price-amount">Fra 850 kr.<span> / time</span></span>
+            </li>
+          </ul>
+          <p class="price-note">Ønsker du en fast pris, så kontakt os for en besigtigelse.</p>
+        </div>
+
+        <div>
+          <h2>Handyman</h2>
+          <ul class="price-list">
+            <li>
+              <span class="price-name">1 handyman<small>+ startgebyr</small></span>
+              <span class="price-dots"></span>
+              <span class="price-amount">400 kr.<span> / time</span></span>
+            </li>
+            <li>
+              <span class="price-name">1 handyman + varebil</span>
+              <span class="price-dots"></span>
+              <span class="price-amount">550 kr.<span> / time</span></span>
+            </li>
+          </ul>
+          <p class="price-note">Vi har materialer med i bilen. Du er også velkommen til at bruge dine egne.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== GODT AT VIDE ===== -->
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-title">
+          <h2>Godt at vide</h2>
+        </div>
+
+        <div class="cards cards-3">
+          <div class="card">
+            <div class="card-body">
+              <h3>Forsikring</h3>
+              <p>Alt indbo er forsikret under flytningen. Ved møbler over 75.000 kr. pr. stk. betales et ekstra tillæg.
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>Materialer</h3>
+              <p>Vi har materialer med i vores servicebiler. Vil du bruge dine egne, er det helt i orden.</p>
+            </div>
+          </div>
+          <div class="card">
+            <div class="card-body">
+              <h3>Servicefradrag</h3>
+              <p>Der er ikke servicefradrag på flytning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== FAST PRIS ===== -->
+    <section class="section section-navy">
+      <div class="container split">
+        <div>
+          <h2>Fast pris på større opgaver</h2>
+          <p class="big-text grey-text">Skal I flytte et kontor, en skole eller en afdeling, kommer vi ud og ser på
+            opgaven. Herefter får I en fast pris. Det er gratis og uforpligtende.</p>
+          <div class="buttons">
+            <a class="button button-red" href="index.html#kontakt">Bed om tilbud</a>
+            <a class="button button-secondary" href="tel:+4527299707">Ring 27 29 97 07</a>
+          </div>
+        </div>
+
+        <img class="split-photo show-top" src="images/flytning-stol.webp" alt="Flyttemand bærer en stol">
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <a class="footer-logo" href="index.html">
+            <img src="images/pa-service-logo.svg" alt="PA Service – forside">
+          </a>
+          <p>Flytning og handyman for private, virksomheder og institutioner i hele Danmark.</p>
+        </div>
+        <div>
+          <h3>Sider</h3>
+          <ul>
+            <li><a href="index.html">Forside</a></li>
+            <li><a href="ydelser.html">Ydelser</a></li>
+            <li><a href="priser.html">Priser</a></li>
+            <li><a href="om-os.html">Om os</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Kontakt</h3>
+          <ul>
+            <li><a href="tel:+4527299707">27 29 97 07</a></li>
+            <li><a href="mailto:paservice@outlook.dk">paservice@outlook.dk</a></li>
+            <li>Baneleddet 37, 2600 Glostrup</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>PA Service · CVR 44521660</span>
+        <span>© 2026 PA Service</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>
